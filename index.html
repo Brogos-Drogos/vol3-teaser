@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>::: A DARK DAY OF RETIRED BOB THE BUILDER — VOL. 3 :::</title>
+
+<!--
+  hey. if you're reading this, you're already looking in the right place.
+  40 years is not the beginning.
+  the phrase was never his.
+  count the attempts: Ω13
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #000010 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23000010'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23222'/%3E%3C/svg%3E");
+    color: #d6d6d6;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  ::selection { background: #ff00ff; color: #000; }
+
+  /* MARQUEE */
+  .marquee-bar {
+    background: linear-gradient(90deg, #ff0033, #ff9900, #ffee00, #33ff00, #00ccff, #cc00ff, #ff0033);
+    color: #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    padding: 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: 3px solid #fff;
+  }
+  .marquee-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 22s linear infinite;
+  }
+  @keyframes marquee { 0% { transform: translateX(0);} 100% { transform: translateX(-100%);} }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 80px; }
+
+  .title-block { text-align: center; margin: 26px 0 10px; }
+  h1.chrome {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(20px, 5.4vw, 38px);
+    line-height: 1.5;
+    margin: 0;
+    background: linear-gradient(180deg, #fff 0%, #b8d9ff 20%, #4f7dff 45%, #ffffff 55%, #99c1ff 75%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    color: #ff6ec7;
+    text-shadow: 0 0 8px #ff6ec7;
+    margin-top: 4px;
+  }
+
+  .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 18px 0 8px; }
+  .badge {
+    border: 2px solid #0f0;
+    color: #0f0;
+    padding: 4px 10px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    background: #001a00;
+    animation: blink 1.4s steps(2, start) infinite;
+  }
+  .badge.pink { border-color: #ff00ff; color: #ff00ff; background: #1a001a; animation-duration: 1.9s; }
+  .badge.yellow { border-color: #ffee00; color: #ffee00; background: #1a1a00; animation-duration: 2.3s; }
+  @keyframes blink { 50% { opacity: 0.25; } }
+
+  hr.rainbow {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    margin: 26px 0;
+  }
+
+  .panel {
+    background: #0a0a1a;
+    border: 3px solid;
+    border-image: linear-gradient(135deg, #00ffff, #ff00ff) 1;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 0 22px rgba(0,255,255,0.15);
+  }
+  .panel h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: #00ffff;
+    margin-top: 0;
+    text-shadow: 2px 2px 0 #ff00ff;
+  }
+  .panel p { line-height: 1.5; font-size: 19px; }
+
+  table.stats {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  table.stats td {
+    border: 1px dashed #444;
+    padding: 6px 10px;
+  }
+  table.stats td.label { color: #888; }
+  table.stats td.val { color: #0f0; text-align: right; }
+
+  .counter {
+    font-family: 'Press Start 2P', monospace;
+    background: #000;
+    color: #0f0;
+    display: inline-block;
+    padding: 6px 10px;
+    letter-spacing: 3px;
+    border: 2px solid #0f0;
+  }
+
+  .secret-btn {
+    display: block;
+    margin: 24px auto;
+    background: #1a1a1a;
+    color: #ff0033;
+    border: 2px solid #ff0033;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    padding: 14px 18px;
+    cursor: pointer;
+    animation: shake 3s infinite;
+  }
+  @keyframes shake {
+    0%, 96%, 100% { transform: rotate(0); }
+    97% { transform: rotate(-1deg); }
+    98% { transform: rotate(1deg); }
+    99% { transform: rotate(-1deg); }
+  }
+  .secret-btn:hover { background: #ff0033; color: #000; }
+
+  #glitchOut {
+    display: none;
+    background: #000;
+    color: #ff2b2b;
+    border: 2px solid #ff2b2b;
+    padding: 16px;
+    font-size: 22px;
+    text-align: center;
+    text-shadow: 2px 0 #0ff, -2px 0 #f0f;
+    margin: 10px 0 26px;
+    animation: jitter 0.15s infinite;
+  }
+  @keyframes jitter {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(-1px,1px); }
+    50% { transform: translate(1px,-1px); }
+    75% { transform: translate(-1px,-1px); }
+    100% { transform: translate(1px,1px); }
+  }
+
+  .guestbook { background: #050505; border: 2px solid #333; padding: 14px; font-size: 16px; }
+  .guestbook .entry { border-bottom: 1px dashed #333; padding: 8px 0; }
+  .guestbook .entry b { color: #ffee00; }
+  .guestbook .entry span { color: #666; font-size: 13px; }
+
+  .tiny-clue {
+    font-size: 9px;
+    color: #0a0a12;
+    text-align: center;
+    letter-spacing: 2px;
+    user-select: text;
+  }
+  .tiny-clue::selection { background: #ff00ff; color:#fff; }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+
+
+
+  .under-construction {
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: #ffee00;
+    background: repeating-linear-gradient(45deg, #000 0 10px, #1a1a00 10px 20px);
+    border: 3px solid #ffee00;
+    padding: 10px;
+    margin: 26px 0;
+  }
+
+  .konami-hint { text-align:center; font-size: 13px; color:#2a2a2a; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    ★彡 WELCOME TO THE OFFICIAL FANSITE ★彡 &nbsp;&nbsp;&nbsp; HE'S BEEN ASLEEP FOR 10 LONG YEARS &nbsp;&nbsp;&nbsp; Ω13 &nbsp;&nbsp;&nbsp; YOU BREAK IT &nbsp;&nbsp;&nbsp; WE FIX IT &nbsp;&nbsp;&nbsp; DO NOT WAKE HIM &nbsp;&nbsp;&nbsp; ★彡 BEST VIEWED IN 800x600 ★彡 &nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="title-block">
+    <h1 class="chrome">A DARK DAY OF<br>RETIRED BOB<br>THE BUILDER</h1>
+    <div class="subtitle">✦ VOLUME 3 ✦ COMING SOON ✦</div>
+  </div>
+
+  <div class="badges">
+    <div class="badge">100% MEMES</div>
+    <div class="badge pink">NEW!!!</div>
+    <div class="badge yellow">NOW W/ LORE</div>
+  </div>
+
+  <hr class="rainbow">
+
+  <div class="panel">
+    <h2>SYSTEM STATUS</h2>
+    <table class="stats">
+      <tr><td class="label">SUBJECT</td><td class="val">RETIRED (?)</td></tr>
+      <tr><td class="label">CONTAINMENT</td><td class="val">EXPIRED</td></tr>
+      <tr><td class="label">SUPPRESSION ATTEMPT</td><td class="val">Ω13</td></tr>
+      <tr><td class="label">TIME ELAPSED</td><td class="val">10 YEARS, 0 DAYS</td></tr>
+      <tr><td class="label">MEMORY STATE</td><td class="val" id="memState">SUPPRESSED...</td></tr>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>VISITOR COUNTER</h2>
+    <p>you are lucky visitor number:</p>
+    <div class="counter" id="hitCounter">000013</div>
+    <p style="margin-top:14px;">welcome back. yes, <i>back</i>. we know you've been here before, even if you don't remember it.</p>
+  </div>
+
+  <div class="under-construction">
+    🚧 PART 3 UNDER CONSTRUCTION 🚧<br>PLEASE EXCUSE OUR DUST
+  </div>
+
+  <button class="secret-btn" id="glitchBtn">⚠ DO NOT CLICK THIS BUTTON ⚠</button>
+  <div id="glitchOut"></div>
+
+  <div class="panel">
+    <h2>GUESTBOOK</h2>
+    <div class="guestbook">
+      <div class="entry"><b>farmer_pickles_1998</b> <span>— 3 days ago</span><br>bro really said grindr for real for real 💀 cant wait for pt3</div>
+      <div class="entry"><b>xXgojoluvrXx</b> <span>— 5 days ago</span><br>WHERE IS HE. it's been way too long. someone check on him</div>
+      <div class="entry"><b>anonymous</b> <span>— 40 years ago</span><br>ᶦᵗ ʷᵃˢⁿᵗ ᵃⁿ ᵃᶜᶜᶦᵈᵉⁿᵗ</div>
+      <div class="entry"><b>bigchungusfan99</b> <span>— unknown</span><br>he's not sleeping. he's counting.</div>
+    </div>
+  </div>
+
+  <footer>
+    site last updated: [REDACTED] &nbsp;|&nbsp; hosted on nothing, owned by no one<br>
+    <span class="tiny-clue">CTRL+U IS YOUR FRIEND. LOOK CLOSER. NOT EVERYTHING HERE IS DECORATION.</span>
+    <div class="konami-hint">▲ ▲ ▼ ▼ ◀ ▶ ◀ ▶</div>
+  </footer>
+
+</div>
+
+<script>
+  // fake counter increments once for flavor
+  let count = 13;
+  setInterval(() => {
+    count += Math.floor(Math.random() * 3);
+    document.getElementById('hitCounter').textContent = String(count).padStart(6, '0');
+  }, 6000);
+
+  // memory state flicker
+  const states = ["SUPPRESSED...", "STABLE.", "SUPPRESSED...", "??????", "SUPPRESSED..."];
+  let si = 0;
+  setInterval(() => {
+    si = (si + 1) % states.length;
+    document.getElementById('memState').textContent = states[si];
+  }, 3000);
+
+  // "do not click" button reveals a corrupted lore fragment
+  const glitchLines = [
+    "i̵̙̋n̶̬̽ ̷̗̌t̸͇̒h̶̡̆e̴̜͝ ̵̳͐b̷̙̌e̶͖͝g̶̙̈i̸͇̕n̴̗̏n̷̡̈i̸̗̕n̴͕̈g̷̗͘,̸̠̏ ̶̮̽t̷̢̆h̸͙͝e̷̮͘r̴̡̈́e̸̥͝ ̶̗̈w̷̙̏a̸͚͝s̵̬̈ ̷̗̏o̶̪͝n̶̡̏l̷̗̈y̸̡͘ ̴̬̒b̶̙̈a̶̗̎l̸͙̏a̷̬͝n̸̥͐c̶̙̏e̵̘̎.",
+    "the phrase was never his to say.",
+    "ask yourself who fixes what he breaks.",
+    "10 years is not a promise. it's a guess.",
+    "count again. it's not the first Ω."
+  ];
+  let gi = 0;
+  document.getElementById('glitchBtn').addEventListener('click', () => {
+    const out = document.getElementById('glitchOut');
+    out.style.display = 'block';
+    out.textContent = glitchLines[gi % glitchLines.length];
+    gi++;
+  });
+
+  // konami code easter egg
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight'];
+  let pos = 0;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === seq[pos]) {
+      pos++;
+      if (pos === seq.length) {
+        pos = 0;
+        const out = document.getElementById('glitchOut');
+        out.style.display = 'block';
+        out.innerHTML = "YOU BREAK IT.<br>WE FIX IT.<br><br>he said it first. not you. not ever you.";
+        out.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    } else {
+      pos = (e.key === seq[0]) ? 1 : 0;
+    }
+  });
+</script>
+
+</body>
+</html>
